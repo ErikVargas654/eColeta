@@ -1,11 +1,9 @@
-create type typeOfWaste as enum ('Lâmpadas', 'Pilhas e baterias', 'Papéis e papelão', 'Resíduos eletrônicos', 'Resíduos orgânicos', 'Óleo de cozinha');
-
-CREATE TABLE Ponto_de_coleta (
-    id UUID PRIMARY KEY,
-    nome varchar not null,
-    email varchar not null,
-    cidade varchar not null,
-    type_of_waste typeOfWaste not null,
-    latitude decimal not null,
-    longitude decimal not null
+CREATE TABLE ponto_de_coleta (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) UNIQUE,
+    email VARCHAR(100),
+    cidade VARCHAR(100),
+    tipo VARCHAR(100),
+    latitude DOUBLE PRECISION,
+    longitude DOUBLE PRECISION
 );

@@ -1,18 +1,15 @@
 package entity;
 
-import Enum.Type_of_waste;
-import java.util.UUID;
-
 public class CollectPoint {
-    public UUID id;
+    public int id;
     public String nome;
     public String email;
     public String cidade;
-    public Type_of_waste type;
+    public String type;
     private final Double latitude;
     private final Double longitute;
 
-    public CollectPoint(UUID id, String nome, String email, String cidade, Type_of_waste type, Double latitude, Double longitute) {
+    public CollectPoint(int id, String nome, String email, String cidade, String type, Double latitude, Double longitute) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -22,7 +19,7 @@ public class CollectPoint {
         this.longitute = longitute;
     }
     
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 
@@ -30,7 +27,7 @@ public class CollectPoint {
         return nome;
     }
 
-    public void setId(UUID id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -46,7 +43,7 @@ public class CollectPoint {
         this.cidade = cidade;
     }
 
-    public void setType(Type_of_waste type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -58,7 +55,7 @@ public class CollectPoint {
         return cidade;
     }
 
-    public Type_of_waste getType() {
+    public String getType() {
         return type;
     }
 
@@ -68,6 +65,10 @@ public class CollectPoint {
 
     public Double getLongitute() {
         return longitute;
+    }
+
+    public double getLongitude() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 

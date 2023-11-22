@@ -1,6 +1,7 @@
 package views;
 
 import DAO.CollectPointDAO;
+import entity.CollectPoint;
 import java.awt.BorderLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -237,8 +238,12 @@ public class CreateCollectPoint extends javax.swing.JFrame {
             String typeOfWaste = (String) this.localTypeOfWaste.getSelectedItem();
             Double latitute = this.geoPositionSelected.getLatitude();
             Double longitude = this.geoPositionSelected.getLongitude();
+            
+            CollectPoint nP = new CollectPoint(0, name, email, city, typeOfWaste, latitute, longitude);
 
-            JOptionPane.showMessageDialog(null, "Ponto de coleta cadastrado com sucesso!");
+            Class<CollectPointDAO> cadastroFeito = CollectPointDAO.class;
+            
+            JOptionPane.showMessageDialog(null, "Ponto de coleta cadastrado!");
             
             this.localName.setText("");
             this.localEmail.setText("");
